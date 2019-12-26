@@ -42,23 +42,25 @@ function onOpen(){
 function set_config() {
   //入力するメッセージボックス
   var backlog_token_result = Browser.inputBox("backlog_token:", Browser.Buttons.OK_CANCEL);
-  if (result != "cancel"){
+  if (backlog_token_result != "cancel"){
     
     PropertiesService.getScriptProperties().setProperty("backlog_token", backlog_token_result)
   }
   
   var space_result = Browser.inputBox("space:", Browser.Buttons.OK_CANCEL);
-  if (result != "cancel"){
+  if (space_result != "cancel"){
     
-    PropertiesService.getScriptProperties().setProperty("space", backlog_token_result)
+    PropertiesService.getScriptProperties().setProperty("space",space_result)
     
   }
   
   var slack_webhook_url_result = Browser.inputBox("slack_webhook_url :", Browser.Buttons.OK_CANCEL);
-  if (result != "cancel"){
+  if (slack_webhook_url_result != "cancel"){
     
     PropertiesService.getScriptProperties().setProperty("slack_webhook_url", slack_webhook_url_result)
     
   }
+  
+  Browser.msgBox("プロパティセットされました。");
   
 }
